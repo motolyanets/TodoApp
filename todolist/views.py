@@ -10,24 +10,20 @@ def home(request):
 
 def create(request):
     if request.method == 'POST':
-        todo = Article()
-        todo.content = request.POST.get('todo')
-        todo.save()
+        Article.objects.create(content=request.POST.get('todo'))
     return HttpResponseRedirect("/")
 
 
 def edit(request, id):
-    todo = Article.objects.get(id=id)
+    todo = Article.objects.filter(id=id)
 
-    if request.method == 'POST':
-        todo.content = request.POST.get('todo')
-        todo.save()
+    if request.method == 'POST' and todo.exists():
+        todo.update(content=request.POST.get('todo'))
         return HttpResponseRedirect("/")
     else:
-        return render(request, 'todolist/edit.html', {'todo': todo})
+        return render(request, 'todolist/edit.html', {'todo': todo.first()})
 
 
 def delete(request, id):
-    todo = Article.objects.get(id=id)
-    todo.delete()
+    Article.objects.filter(id=id).first().delete()
     return HttpResponseRedirect("/")
