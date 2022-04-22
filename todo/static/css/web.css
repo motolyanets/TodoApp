@@ -1,0 +1,76 @@
+body {
+    max-width: 75%;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: rgba(1, 2, 41, 0.596);
+    align-self: center;
+    background-color: rgb(248, 248, 221);
+    margin: auto;
+    margin-top: 1em;
+    padding: 1em;
+    border-style: solid;
+    border-width: 0.5em;
+    border-color: rgb(7, 59, 114);
+    border-radius: 2em;
+}
+
+h1 {
+    color: black;
+    text-decoration: underline;
+    text-align: center;
+}
+
+.list {
+    display: flex;
+    max-width: 100%;
+    padding-bottom: 0.2em;
+    margin-bottom: 1em;
+    border-bottom-style: dashed;
+    border-bottom-width: 0.1em;
+    border-bottom-color: rgb(157, 154, 154);
+    vertical-align: middle;
+}
+
+p {
+    align-self: start;
+    font-size: 1.3em;
+    padding: 0em;
+    text-align: left;
+    margin: 0;
+    max-width: 75%;
+    margin-right: auto;
+}
+
+a {
+    align-self: center;
+    color: black;
+    font-size: 1em;
+    margin-left: 1em;
+    padding: 0.2em;
+    border-style: solid;
+    border-width: 0.1em;
+    border-color: black;
+    background-color:rgb(201, 201, 202);
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 0.2em;
+
+}
+
+form {
+    font-size: 1em;
+    margin: auto;
+    margin-top: 2em;
+    padding: 0.25em;
+    padding-top: 1em;
+    text-align: left;
+    border-top-style: solid;
+    border-top-width: 0.3em;
+    border-top-color: black;
+    width: 100%;
+}
+
+.add {
+    display: flex;
+    max-width: 100%;
+    font-size: 1.3em;
+}
