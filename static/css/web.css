@@ -17,6 +17,23 @@ h1 {
     color: black;
     text-decoration: underline;
     text-align: center;
+    border-bottom-style: solid;
+    border-bottom-width: 0.3em;
+    border-bottom-color: black;
+    padding-bottom: 0.2em;
+}
+
+.executors {
+    display: flex;
+    margin-bottom: 1em;
+    padding-bottom: 0.5em;
+    border-bottom-style: solid;
+    border-bottom-width: 0.3em;
+    border-bottom-color: black;
+}
+
+.executor {
+    margin: auto;
 }
 
 .list {
@@ -31,13 +48,22 @@ h1 {
 }
 
 p {
-    align-self: start;
     font-size: 1.3em;
     padding: 0em;
-    text-align: left;
+}
+
+.task {
+    align-self: start;
     margin: 0;
     max-width: 75%;
     margin-right: auto;
+}
+
+.createdAt {
+    align-items: flex-end;
+    margin: 0;
+    margin-right: 0em;
+    margin-left: 1em;
 }
 
 a {
@@ -59,13 +85,7 @@ a {
 form {
     font-size: 1em;
     margin: auto;
-    margin-top: 2em;
-    padding: 0.25em;
-    padding-top: 1em;
     text-align: left;
-    border-top-style: solid;
-    border-top-width: 0.3em;
-    border-top-color: black;
     width: 100%;
 }
 

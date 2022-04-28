@@ -1,0 +1,21 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Executor</title>
+  <link rel="stylesheet" href="{% static 'css/web.css'%}" type="text/css">
+</head>
+<body>
+    <h1>Список задач</h1>
+    {% for post in posts %}
+        <div class="list">
+            <p class="task"> {{post.content}} </p>
+            <p class="createdAt"> | {{post.executor}} </p>
+            <p class="createdAt"> | {{post.createdAt}} | </p>
+            <a href = 'edit/{{post.id}}'>Изменить</a>
+            <a href = 'delete/{{post.id}}'>Удалить</a>
+        </div>
+    {% endfor %}
+</body>
+</html>

@@ -9,18 +9,34 @@
 <body>
     <h1>Список задач</h1>
 
+    <div class="executors">
+        {% for executor in executors %}
+            <p class="executor">{{executor}}</p>
+        {% endfor %}
+
+    </div>
+
+
     {% for post in posts %}
         <div class="list">
-            <p> {{post.content}} </p>
+            <p class="task"> {{post.content}} </p>
+            <p class="createdAt"> | {{post.executor}} </p>
+            <p class="createdAt"> | {{post.createdAt}} | </p>
             <a href = 'edit/{{post.id}}'>Изменить</a>
             <a href = 'delete/{{post.id}}'>Удалить</a>
         </div>
     {% endfor %}
+
     <div class="add">
         <form method="POST" action="create/">
             {% csrf_token %}
             <label>Введите задачу: </label>
             <input type="text" name="todo"/>
+            <select name="executor">
+                {% for executor in executors %}
+                    <option value="{{executor.id}}">{{executor}}</option>
+                {% endfor %}
+            </select>
             <input type="submit" value="Добавить">
         </form>
     </div>
