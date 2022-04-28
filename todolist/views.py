@@ -24,6 +24,9 @@ def edit(request, id):
         return render(request, 'todolist/edit.html', {'todo': todo.first()})
 
 
+
+
+
 def delete(request, id):
     Article.objects.filter(id=id).first().delete()
     return HttpResponseRedirect("/")
