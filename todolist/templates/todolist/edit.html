@@ -1,18 +1,21 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Edit</title>
+    <link rel="stylesheet" href="{% static 'css/web.css'%}" type="text/css">
 </head>
 <body>
-    <form method="POST">
-        {% csrf_token %}
-        <p>
-            <label>Введите задачу</label>
-            <input type="text" name="todo" value="{{todo.content}}"/>
-        </p>
-        <input type="submit" value="Сохранить">
-    </form>
+    <h1>Корректировка задачи</h1>
 
+    <div class="add">
+        <form method="POST">
+            {% csrf_token %}
+            <label>Измените задачу:</label>
+            <input type="text" name="todo" value="{{todo.content}}"/>
+            <input type="submit" value="Сохранить">
+        </form>
+    </div>
 </body>
 </html>

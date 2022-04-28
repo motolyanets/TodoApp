@@ -1,16 +1,17 @@
 from django.shortcuts import render
-from django.http import HttpResponse, HttpResponseRedirect
-from .models import Article
+from django.http import HttpResponseRedirect
+from .models import Article, Executors
 
 
 def home(request):
-    posts = Article.objects.all()
-    return render(request, 'todolist/home.html', {'posts': posts})
+    posts = Article.objects.order_by('createdAt')
+    executors = Executors.objects.order_by('name')
+    return render(request, 'todolist/home.html', {'posts': posts, 'executors': executors})
 
 
 def create(request):
     if request.method == 'POST':
-        Article.objects.create(content=request.POST.get('todo'))
+        Article.objects.create(content=request.POST.get('todo'), executor_id=request.POST.get('executor'))
     return HttpResponseRedirect("/")
 
 
