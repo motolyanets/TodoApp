@@ -25,9 +25,11 @@ def edit(request, id):
         return render(request, 'todolist/edit.html', {'todo': todo.first()})
 
 
-
-
-
 def delete(request, id):
     Article.objects.filter(id=id).first().delete()
     return HttpResponseRedirect("/")
+
+
+def executor(request, executor_id):
+    posts = Article.objects.filter(executor_id=executor_id).order_by('createdAt')
+    return render(request, 'todolist/executor.html', {'posts': posts})

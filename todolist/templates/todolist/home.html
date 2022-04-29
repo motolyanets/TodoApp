@@ -9,9 +9,10 @@
 <body>
     <h1>Список задач</h1>
 
+
     <div class="executors">
         {% for executor in executors %}
-            <p class="executor">{{executor}}</p>
+            <a class="executor" href="executor/{{executor.id}}">{{executor}}</a>
         {% endfor %}
 
     </div>
@@ -22,10 +23,11 @@
             <p class="task"> {{post.content}} </p>
             <p class="createdAt"> | {{post.executor}} </p>
             <p class="createdAt"> | {{post.createdAt}} | </p>
-            <a href = 'edit/{{post.id}}'>Изменить</a>
-            <a href = 'delete/{{post.id}}'>Удалить</a>
+            <a class="button" href = 'edit/{{post.id}}'>Изменить</a>
+            <a class="button" href = 'delete/{{post.id}}'>Удалить</a>
         </div>
     {% endfor %}
+
 
     <div class="add">
         <form method="POST" action="create/">
@@ -40,6 +42,7 @@
             <input type="submit" value="Добавить">
         </form>
     </div>
+
 
 </body>
 </html>

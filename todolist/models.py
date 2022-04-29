@@ -10,7 +10,7 @@ content
 class Article(models.Model):
     content = models.TextField(blank=False)
     createdAt = models.DateTimeField(default=datetime.datetime.now())
-    executor = models.ForeignKey('Executors', on_delete=models.PROTECT)
+    executor = models.ForeignKey('Executors', on_delete=models.PROTECT, null=True)
 
     def __str__(self):
         return self.content
